@@ -669,8 +669,6 @@ def patch_rom(world, player, rom):
     
     if difficulty.progressive_bow_limit < 2 and world.swords == 'swordless':
         rom.write_bytes(0x180098, [2, overflow_replacement])
-
-    if world.difficulty_adjustments in ['hard', 'expert']:
         rom.write_byte(0x180181, 0x01) # Make silver arrows work only on ganon
 
     # set up game internal RNG seed
